@@ -5,7 +5,7 @@ pipeline {
   tools {nodejs "Node.js 18.15.0"}
 
   stages {
-    stage("Clean Up") {
+    stage("Cleanup") {
       steps {
         deleteDir()
       }
@@ -15,7 +15,7 @@ pipeline {
         sh "git clone https://github.com/alaneicker1975/jenkins-demo.git"
       }
     }
-    stage("Install Dependencies"){
+    stage("Install"){
       steps {
         dir("jenkins-demo") {
           sh "npm install"
