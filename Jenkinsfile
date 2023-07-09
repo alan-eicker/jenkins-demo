@@ -12,6 +12,8 @@ pipeline {
     }
     stage("Clone") {
       steps {
+        sh "git config --global user.email 'alaneicker@gmail.com' && git config --global user.name 'alaneicker1975'"
+        sh "git config --global credential.helper '/bin/bash ${WORKSPACE}/ops/credentials-helper.sh'"
         sh "git clone https://github.com/alaneicker1975/jenkins-demo.git"
       }
     }
