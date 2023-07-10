@@ -5,7 +5,7 @@ pipeline {
   tools {nodejs "Node.js 18.15.0"}
   
   parameters {
-    booleanParam(description: "Enable Service?", name: "myBoolean")
+    booleanParam(defaultValue: false, description: "Enable Service?", name: "myBoolean")
   }
 
   stages {
