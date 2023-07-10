@@ -19,6 +19,7 @@ pipeline {
     stage("Install"){
       steps {
         dir("jenkins-demo") {
+          echo "********** Installing Dependencies **********"
           sh "npm install"
         }
       }
@@ -26,6 +27,7 @@ pipeline {
     stage("Test"){
       steps {
         dir("jenkins-demo") {
+          echo "********** Running Tests **********"
           sh "npm test"
         }
       }
@@ -33,6 +35,7 @@ pipeline {
     stage("Build") {
       steps {
         dir("jenkins-demo") {
+          echo "********** Building **********"
           sh "npm run build"
         }
       }
@@ -40,6 +43,7 @@ pipeline {
     // stage("Deploy"){
     //   steps {
     //     dir("jenkins-demo") {
+    //       echo "********** Deploying **********"
     //       sh "npm run gh-pages"
     //     }
     //   }
