@@ -12,6 +12,7 @@ pipeline {
     }
     stage("Clone") {
       steps {
+        sh "echo '********* Cloning '*********'"
         sh "git clone https://github.com/alaneicker1975/jenkins-demo.git"
       }
     }
@@ -36,14 +37,12 @@ pipeline {
         }
       }
     }
-    stage("Deploy"){
-      steps {
-        dir("jenkins-demo") {
-          // sh "git config --global user.email 'alaneicker@gmail.com' && git config --global user.name 'alaneicker1975'"
-          // sh "git config --global credential.helper '/bin/bash ${WORKSPACE}/ops/credentials-helper.sh'"
-          sh "npm run gh-pages"
-        }
-      }
-    }
+    // stage("Deploy"){
+    //   steps {
+    //     dir("jenkins-demo") {
+    //       sh "npm run gh-pages"
+    //     }
+    //   }
+    // }
   }
 }
