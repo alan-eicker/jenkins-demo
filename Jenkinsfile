@@ -20,6 +20,7 @@ pipeline {
         echo "BooleanParam set to: ${params.myBoolean}"
         echo "Deploying to: ${params.deployEnv}"
         echo "Environment var: ${myEnv}";
+        echo "Build Number: ${env.BUILD_NUMBER}";
       }
     }
     stage("Cleanup") {
