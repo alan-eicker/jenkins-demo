@@ -9,12 +9,17 @@ pipeline {
     choice(choices: ["TEST","DEV","QA","PREPROD","PROD"], description: "Which environment to deploy to?", name: "deployEnv")
   }
 
+  environment {
+    def myEnv = "devlopment"
+  }
+
   stages {
     stage("Build Info") {
       steps {
         echo "********** Checking Params **********"
         echo "BooleanParam set to: ${params.myBoolean}"
         echo "Deploying to: ${params.deployEnv}"
+        echo "Environment var: ${myEnv}";
       }
     }
     stage("Cleanup") {
