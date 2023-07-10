@@ -6,14 +6,15 @@ pipeline {
   
   parameters {
     booleanParam(defaultValue: true, description: "Enable Service?", name: "myBoolean")
-    text(defaultValue: "TEST", description: "Which environment to deploy to?", name: "deployEnv")
+    choice(choices: ["TEST","DEV","QA","PREPROD","PROD"]description: "Which environment to deploy to?", name: "deployEnv")
   }
 
   stages {
-    stage("Check Params") {
+    stage("Build Info") {
       steps {
         echo "********** Checking Params **********"
         echo "BooleanParam set to: ${params.myBoolean}"
+        echo "Deploying to: ${params.deployEnv}"
       }
     }
     stage("Cleanup") {
