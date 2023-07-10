@@ -6,6 +6,7 @@ pipeline {
   
   parameters {
     booleanParam(defaultValue: true, description: "Enable Service?", name: "myBoolean")
+    text(defaultValue: "TEST", description: "Which environment to deploy to?", name: "deployEnv")
   }
 
   stages {
