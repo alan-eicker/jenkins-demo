@@ -12,7 +12,6 @@ pipeline {
     }
     stage("Clone") {
       steps {
-        sh "echo '********* Cloning '*********'"
         sh "git clone https://github.com/alaneicker1975/jenkins-demo.git"
       }
     }
