@@ -15,6 +15,12 @@ pipeline {
         deleteDir()
       }
     }
+    stage("Build Info") {
+      steps {
+        echo "********** Checking Params **********"
+        echo "BooleanParam set to: ${params.myBoolean}"
+      }
+    }
     stage("Clone") {
       steps {
         echo "********** Cloning Repo **********"
