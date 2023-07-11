@@ -22,10 +22,8 @@ pipeline {
         echo "Environment var: ${myEnv}";
         echo "Build Number: ${env.BUILD_NUMBER}";
 
-        script {
-          if (params.deployEnv == "PROD") {
-            echo "RUNNING IN 'PROD' MODE."
-          }
+        if (params.deployEnv == "PROD") {
+          echo "RUNNING IN 'PROD' MODE."
         }
       }
     }
