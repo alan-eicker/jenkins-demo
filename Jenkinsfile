@@ -9,8 +9,9 @@ pipeline {
     choice(choices: ["TEST","DEV","QA","PREPROD","PROD"], description: "Which environment to deploy to?", name: "deployEnv")
   }
 
-  environment {
+  env {
     def myEnv = "devlopment"
+    def myNumber = 10
   }
 
   stages {
@@ -22,7 +23,7 @@ pipeline {
         echo "Environment var: ${myEnv}";
         echo "Build Number: ${env.BUILD_NUMBER}";
 
-        myFunc("blah, blah!!");
+        myFunc("blah, blah!!", myNumber);
 
         script {
           if (params.deployEnv == "PROD") {
@@ -74,6 +75,7 @@ pipeline {
   }
 }
 
-def myFunc(String myText) {
+def myFunc(String myText, int myNumber) {
   echo "myText set to: ${myText}";
+  echo "myNumber set to: ${myNumber}";
 }
