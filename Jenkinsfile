@@ -22,6 +22,8 @@ pipeline {
         echo "Environment var: ${myEnv}";
         echo "Build Number: ${env.BUILD_NUMBER}";
 
+        myFunc("blah, blah!!");
+
         script {
           if (params.deployEnv == "PROD") {
             echo "RUNNING IN 'PROD' MODE."
@@ -70,4 +72,9 @@ pipeline {
     //   }
     // }
   }
+}
+
+def myFunc(string myText, int myNumber) {
+  echo "myText set to: ${myText}";
+  echo "myNumber set to: ${myNumber}";
 }
