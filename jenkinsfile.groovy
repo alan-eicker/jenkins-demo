@@ -21,6 +21,12 @@ pipeline {
         echo "Deploying to: ${params.deployEnv}"
         echo "Environment var: ${myEnv}";
         echo "Build Number: ${env.BUILD_NUMBER}";
+
+        script {
+          if (params.deployEnv == "PROD") {
+            echo "RUNNING IN 'PROD' MODE."
+          }
+        }
       }
     }
     stage("Cleanup") {
@@ -60,10 +66,7 @@ pipeline {
     }
     // stage("Deploy"){
     //   steps {
-    //     dir("jenkins-demo") {
-    //       echo "********** Deploying **********"
-    //       sh "npm run gh-pages"
-    //     }
+    //     echo "********** Deploying **********"
     //   }
     // }
   }
