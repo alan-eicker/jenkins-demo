@@ -11,7 +11,7 @@ pipeline {
 
   environment {
     def myEnv = "devlopment"
-    def myNumber = 10
+    def myNum = 10
   }
 
   stages {
@@ -23,7 +23,7 @@ pipeline {
         echo "Environment var: ${myEnv}";
         echo "Build Number: ${env.BUILD_NUMBER}";
 
-        myFunc("blah, blah!!", myNumber);
+        myFunc("blah, blah!!", myNum);
 
         script {
           if (params.deployEnv == "PROD") {
