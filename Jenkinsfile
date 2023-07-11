@@ -37,7 +37,7 @@ pipeline {
     stage("Install"){
       steps {
         echo "********** Installing Dependencies **********"
-        sh 'cd jenkins-demo'
+        sh 'ls'
         sh "npm install"
         // dir("jenkins-demo") {
         //   echo "********** Installing Dependencies **********"
