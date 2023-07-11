@@ -11,6 +11,7 @@ pipeline {
 
   environment {
     def myEnv = "devlopment"
+    def files
   }
 
   stages {
@@ -36,7 +37,7 @@ pipeline {
     // }
     stage("Check Files") {
       steps {
-        def files = findFiles(glob: '**/*')
+        files = findFiles(glob: "${WORKSPACE}/**/*")
         sh "echo ${files}"
       }
     }
