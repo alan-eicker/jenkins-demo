@@ -70,11 +70,7 @@ pipeline {
     stage("Build Remote"){
       steps {
         echo "********** Building remote **********"
-        build 
-          job: "Jenkins-Demo", 
-          parameters: [
-            [$class: "BooleanParameterValue", name: "myBoolean", value: false ]
-          ]
+        build job: "Jenkins-Demo", parameters: [[$class: "BooleanParameterValue", name: "myBoolean", value: false ]]
       }
     }
   }
