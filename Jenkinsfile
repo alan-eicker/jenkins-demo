@@ -73,7 +73,7 @@ pipeline {
         build 
           job: "Jenkins-Demo", 
           parameters: [
-            [$class: "booleanParamValue", name: "myBoolean", value: false ]
+            [$class: "BooleanParameterValue", name: "myBoolean", value: false ]
           ]
       }
     }
