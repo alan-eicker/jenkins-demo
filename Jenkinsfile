@@ -67,15 +67,16 @@ pipeline {
         }
       }
     }
-    // stage("Deploy"){
-    //   steps {
-    //     echo "********** Deploying **********"
-    //   }
-    // }
+    stage("Build Remote"){
+      steps {
+        echo "********** Building remote **********"
+        build "Jenkins-Demo"
+      }
+    }
   }
 }
 
 def myFunc(String myText, int myNumber) {
-  echo "myNumber set to: ${myNumber}";
-  echo "myText set to: ${myText}";
+  echo "myNumber set to: ${myNumber}"
+  echo "myText set to: ${myText}"
 }
