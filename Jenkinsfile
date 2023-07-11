@@ -28,10 +28,16 @@ pipeline {
         deleteDir()
       }
     }
-    stage("Clone") {
+    // stage("Clone") {
+    //   steps {
+    //     echo "********** Cloning Repo **********"
+    //     sh "git clone https://github.com/alaneicker1975/jenkins-demo.git"
+    //   }
+    // }
+    stage("Check Files") {
       steps {
-        echo "********** Cloning Repo **********"
-        sh "git clone https://github.com/alaneicker1975/jenkins-demo.git"
+        def files = findFiles(glob: '**/*')
+        sh "echo ${files}"
       }
     }
     stage("Install"){
