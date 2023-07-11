@@ -24,7 +24,7 @@ pipeline {
 
         script {
           if (params.deployEnv == "PROD") {
-            echp "RUNNING IN 'PROD' MODE."
+            echo "RUNNING IN 'PROD' MODE."
           }
         }
       }
