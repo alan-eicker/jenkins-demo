@@ -28,18 +28,20 @@ pipeline {
         deleteDir()
       }
     }
-    stage("Clone") {
-      steps {
-        echo "********** Cloning Repo **********"
-        sh "git clone https://github.com/alaneicker1975/jenkins-demo.git"
-      }
-    }
+    // stage("Clone") {
+    //   steps {
+    //     echo "********** Cloning Repo **********"
+    //     sh "git clone https://github.com/alaneicker1975/jenkins-demo.git"
+    //   }
+    // }
     stage("Install"){
       steps {
-        dir("jenkins-demo") {
-          echo "********** Installing Dependencies **********"
-          sh "npm install"
-        }
+        echo "********** Installing Dependencies **********"
+        sh "npm install"
+        // dir("jenkins-demo") {
+        //   echo "********** Installing Dependencies **********"
+        //   sh "npm install"
+        // }
       }
     }
     stage("Test"){
