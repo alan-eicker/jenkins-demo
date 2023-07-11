@@ -9,7 +9,7 @@ pipeline {
     choice(choices: ["TEST","DEV","QA","PREPROD","PROD"], description: "Which environment to deploy to?", name: "deployEnv")
   }
 
-  env {
+  environment {
     def myEnv = "devlopment"
     def myNumber = 10
   }
