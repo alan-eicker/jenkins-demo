@@ -1,4 +1,4 @@
-node ("Node.js 18.15.0") {
+node ("nodejs") {
 
   agent any
 
