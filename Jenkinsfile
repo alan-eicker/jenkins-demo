@@ -1,8 +1,8 @@
-pipeline {
+node ("Node.js 18.15.0") {
 
   agent any
 
-  tools {nodejs "Node.js 18.15.0"}
+  // tools {nodejs ""}
   
   parameters {
     booleanParam(defaultValue: true, description: "Enable Service?", name: "myBoolean")
@@ -34,14 +34,6 @@ pipeline {
     //     sh "git clone https://github.com/alaneicker1975/jenkins-demo.git"
     //   }
     // }
-    stage("Check Files") {
-      steps {
-        script {
-          def files = findFiles(glob: "${WORKSPACE}/**/*")
-          sh "echo ${files}"
-        }
-      }
-    }
     stage("Install"){
       steps {
         dir("jenkins-demo") {
