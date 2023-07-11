@@ -36,12 +36,10 @@ pipeline {
     }
     stage("Install"){
       steps {
-        echo "********** Installing Dependencies **********"
-        sh "npm install"
-        // dir("jenkins-demo") {
-        //   echo "********** Installing Dependencies **********"
-        //   sh "npm install"
-        // }
+        dir("jenkins-demo") {
+          echo "********** Installing Dependencies **********"
+          sh "npm install"
+        }
       }
     }
     stage("Test"){
