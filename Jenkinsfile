@@ -74,7 +74,7 @@ pipeline {
   }
 }
 
-def myFunc(string myText, int myNumber) {
+def myFunc(String myText, int myNumber) {
   echo "myText set to: ${myText}";
   echo "myNumber set to: ${myNumber}";
 }
