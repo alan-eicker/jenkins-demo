@@ -23,7 +23,7 @@ pipeline {
         echo "Environment var: ${myEnv}";
         echo "Build Number: ${env.BUILD_NUMBER}";
 
-        myFunc("blah, blah!!", myNum);
+        myFunc("blah, blah!!");
 
         script {
           if (params.deployEnv == "PROD") {
@@ -75,7 +75,7 @@ pipeline {
   }
 }
 
-def myFunc(String myText, int myNumber) {
+def myFunc(String myText) {
   echo "myText set to: ${myText}";
-  echo "myNumber set to: ${myNumber}";
+  //echo "myNumber set to: ${myNumber}";
 }
