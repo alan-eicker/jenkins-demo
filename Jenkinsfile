@@ -21,6 +21,12 @@ pipeline {
         echo "Deploying to: ${params.deployEnv}"
         echo "Environment var: ${myEnv}";
         echo "Build Number: ${env.BUILD_NUMBER}";
+
+        script {
+          if (params.deployEnv == "PROD") {
+            echp "RUNNING IN 'PROD' MODE."
+          }
+        }
       }
     }
     stage("Cleanup") {
@@ -58,14 +64,10 @@ pipeline {
         }
       }
     }
-    script {
-      if (params.deployEnv == "PROD") {
-        stage("Deploy"){
-          steps {
-            echo "********** Deploying **********"
-          }
-        }
-      }
-    }
+    // stage("Deploy"){
+    //   steps {
+    //     echo "********** Deploying **********"
+    //   }
+    // }
   }
 }
