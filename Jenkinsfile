@@ -58,13 +58,14 @@ pipeline {
         }
       }
     }
-    // stage("Deploy"){
-    //   steps {
-    //     dir("jenkins-demo") {
-    //       echo "********** Deploying **********"
-    //       sh "npm run gh-pages"
-    //     }
-    //   }
-    // }
+    script {
+      if (params.deployEnv == "PROD") {
+        stage("Deploy"){
+          steps {
+            echo "********** Deploying **********"
+          }
+        }
+      }
+    }
   }
 }
